@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class Singleton : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public static Singleton Instance { get; private set; }
+
+    private void Awake()
     {
-        
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        } 
     }
 
-    // Update is called once per frame
-    void Update()
+    public int playScore = 0;
+
+    public void IncreaseScore(int amount)
     {
-        
+        playScore += amount;
     }
+
 }

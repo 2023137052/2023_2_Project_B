@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GenericContainerExample : MonoBehaviour
+
 {
     private GenericContainer<int> intContainer;
     private GenericContainer<string> stringContainer;
