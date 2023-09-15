@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenericContainer : MonoBehaviour
+public class GenericContainer<T>
 {
     private T[] items;
     private int currentIndex = 0;
@@ -22,4 +22,7 @@ public class GenericContainer : MonoBehaviour
     }
 
     public T[] GetItems()
+    {
+        return items;
+    }
 }
